@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Elections</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+</head>
+<body>
+    <label for="name">Enter your Name</label><br>
+    <input type="text" id="name" autocomplete="off"><br>
+    <label for="voterID">Enter your voting ID</label><br>
+    <input type="text" id="voterID" autocomplete="off"><br>
+    <label for="canidiate1">Ammar Shahzad</label>
+    <input type="radio" id="canidiate1" name="vote" value="Ammar"><br>
+    <label for="canidiate2">Huzaifa Rao</label>
+    <input type="radio" id="canidiate2" name="vote" value="Huzaifa"><br>
+    <label for="canidiate3">Soban Ahmad</label>
+    <input type="radio" id="canidiate3" name="vote" value="Abdullah"><br>
+    <label for="canidiate4">Hanan Ahmad</label>
+    <input type="radio" id="canidiate4" name="vote" value="Hanan"><br>
+    <button id="submit">Vote</button><br>
+    <label id="msg2"></label><br>
+    <label id="msg3">Voted = 0</label><br>
+    <label id="msg4">Remaining Votes = 40</label><br>
+    <button id="result">Get Result</button><br>
+    <div id="authorization">
+    <label for="pass">Enter Password to generate the Election results</label>
+    <input id="pass"  type="password" placeholder="Enter Password"><br>
+    <button id="generate">Generate Results</button>
+    <button id="polling">Back to Poll</button>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
