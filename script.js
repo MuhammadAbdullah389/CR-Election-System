@@ -27,22 +27,21 @@ let c3 = 0;
 let c4 = 0;
 let totalVotes = 40;
 let polled     = 0;
-var voters = [3,6,10,12,14,23,26,30,34,37,39,42,45,48,51,54,59,61,64,67,72,75,78,81,84,90,93,98,102,104,108,114,117,120,124,127,130,134,146,149];
-btn.addEventListener("click", () => {
 
+//List of Voters allowed to cast their Vote
+var voters = [3,6,10,12,14,23,26,30,34,37,39,42,45,48,51,54,59,61,64,67,72,75,78,81,84,90,93,98,102,104,108,114,117,120,124,127,130,134,146,149];
+//Function to submit the vote by a Voter when button is clicked
+btn.addEventListener("click", () => {
+   //Checking if the Name field is empty
    if (input.value == ""){
       msg2.innerText = "Please enter your ID"; 
       return;
    }
-
-   let name = input.value;
-
+let name = input.value;
+//Loop to check if the voter who voted is present or not
 for (let el of voters){
-
 if (el == name){
-
    if (totalVotes > 0){
-
    if (canidiate1.checked){
       c1++;
    }else if (canidiate2.checked){
@@ -55,34 +54,39 @@ if (el == name){
       msg2.innerText = `${name},Please vote`;
       return;
    }
-
+//Updating the polled and remaining votes
    totalVotes--;
    polled++;
-
+//Updating relevent messages
    msg3.innerText = `Voted = ${polled}`
    msg4.innerText = `Remaining = ${totalVotes}`
    msg2.innerText = "Thanks for voting";
+//Setting the input fields to become empty
    input.value = "";
    voterName.value = "";
+//Setting all radio buttons to unchecked state
    let radios = document.querySelectorAll('input[name="vote"]');
    radios.forEach(radio => {
    radio.checked = false;
 });
-
 }else{
    msg2.innerText = "OOPS! It seems that all member have voted"; 
 }
+//Removing the voter from voting list when he/she polled
 let index = voters.indexOf(el);
 voters.splice(index,1);
 break;
 }else{
    msg2.innerText = "OOPS, We can't find your vote";
 }}})
+//Function to open generate result panel
 result.addEventListener("click", () => {
    authorization.style.display = "block"
 })
+//Function to download result
 showResult.addEventListener("click", () => {
    let passingCode = password.value;
+   //Admin Verification
    if (passingCode === "vegeta123") {
       // Determine the winner
       let winner;
@@ -129,16 +133,22 @@ showResult.addEventListener("click", () => {
       authorization.style.display = "none";
    }
 });
-
+//Functions to close their respective panels
 pollBack.addEventListener("click", () => {
    authorization.style.display = "none"
 })
+
+//Functions to close their respective panels
 polling.addEventListener("click", () => {
    voteReg.style.display = "none";
 })
+
+//Function to open the Voter registeration panel
 newbtn.addEventListener("click", () => {
    voteReg.style.display = "block";
 })
+
+//Function to register the Voter
 addVote.addEventListener("click", () => {
    let newId = newVoter.value;
    let code = pin.value;
