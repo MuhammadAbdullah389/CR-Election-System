@@ -40,6 +40,6 @@ button:hover {
     font-size: 14px;
     font-style: italic;
 }
-#authorization {
+#authorization , #voteReg {
     display: none;
 }
