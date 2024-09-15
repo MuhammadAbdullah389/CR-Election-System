@@ -43,3 +43,7 @@ button:hover {
 #authorization , #voteReg {
     display: none;
 }
+i {
+    position: relative;
+    right: 2em;
+}
