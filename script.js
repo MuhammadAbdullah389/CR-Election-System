@@ -21,6 +21,7 @@ let polling = document.querySelector("#backPoll")
 let voteReg = document.querySelector("#voteReg")
 let newbtn = document.querySelector("#new")
 let eye = document.querySelector("#eye")
+let eyes = document.querySelector("#eyes")
 let flag = true;
 let c1 = 0;
 let c2 = 0;
@@ -173,6 +174,17 @@ addVote.addEventListener("click", () => {
       
    }else {
       alert("You cant register as you are not an Admin");
+   }
+})
+eyes.addEventListener("click",() => {
+   if (password.type == "password"){
+      password.type = "text";
+      eyes.classList.add("fa-eye");
+      eyes.classList.remove("fa-eye-slash");
+   }else{
+      password.type = "password";
+      eyes.classList.remove("fa-eye");
+      eyes.classList.add("fa-eye-slash");
    }
 })
 eye.addEventListener("click",() => {
